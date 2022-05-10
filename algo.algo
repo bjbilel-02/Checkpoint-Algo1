@@ -1,0 +1,28 @@
+ALGORITHM verif
+VAR
+    ch: string;
+    i,countc,countw,countv: INTEGER;
+BEGIN
+    // recuperation d'une chaine
+    REPEAT
+        read(ch);
+    UNTIL ((ch:STRING)&&(ch[length-1]=="."))
+    // initialisation
+    countc:=0;
+    countw:=1;
+    countv:=0;
+    i:=0;
+
+    FOR i FROM 0 TO ch.length-1 STEP step  DO
+        countc:=countc+1;
+        if(ch[i]==" ")then
+        countw:=countw+1;
+        end_if
+        if ch[i] in ("a","e","i","o","u","y"):
+        countv:=countv+1;
+        end_if
+    END_FOR
+    write(countc);
+    write(countw);
+    write(countv);
+END
